@@ -1,0 +1,64 @@
+Cypress Day 03 
+========
+Folder Structure:
+------------------
+1. Fixture: Used to create constant test data
+-url, email, username, password,..
+-This is like creating static variables in JAVA
+---------------------
+2. integration:
+-This folder is used to create the test cases
+-similar to java folder in selenium
+-By default this folder has some test cases
+-We can delete those test case and write our own
+-in this folder we can create our own folders and test classes
+----------------------------------
+3. plug ins:
+-By default, this has index.js
+-We can add our own plugins
+	-browser options
+	-accepting browser certificates ...
+----------------------
+4. support:
+-This is used to create custom methods, utility classes,...
+-When we add any costom methods in support folder, they will be visible in the entire framework automatically
+---------------
+5. node_modules:
+-This has all packages and required npm(node package manager)
+-This is similar to maven dependencies/plugins
+-----------
+6. cypress.json
+-This is used to override cypress custom behaviours
+-Adding global variables
+-Add this in cypress.json file to override subdomain security
+
+{
+    "chromeWebSecurity": false
+}
+-----------
+7. package-lock.json
+-After npm commends, this file will be generated
+-This is specific file based on the npm packages
+(project specific informations)
+-In our case, this package has all cypress specific informarion
+------------
+8.package.json
+-This file has basic general configirations
+-such as name, description, devDependencies
+--------------
+Note:
+Cypress runs inside the browser unlike the other automation tool
+For example, selenium need WrebDriver and it runs outside of the browser
+------------------------------
+-Cypress used only javascript/jquery
+-Cypress can run on chrome, firefox, edge, electron(default cypress browser)
+-It is esy to to run headless test execution
+-It is easy to get screenshot and videos with cypress.
+-It is easy to debug the cypress test cases.
+-Cypress helps us to find the locators easily
+
+-------------------------------
+-Cypress waits 4 seconds dynamically by defults. 
+-4 seconds wait will be applied when needed.
+-We can overwrite this behavior 
+-----------------------
