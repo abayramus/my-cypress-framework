@@ -1,0 +1,84 @@
+Cypress Day4
+-----
+it.skip() => skips the test case
+-----
+.should('be.visible')//asserting if the element is visible
+------
+***Selecting from a dropdown
+cy
+.get('#dropdown')
+.select('Option 1')
+
+* { force: true } => when the dropdown element is covered by other elements
+or the dropdown element is hidden, 
+then cypress can fail to click
+Then we need to for to select from teh dropdown
+
+cy
+.get('#icp-selected-country')
+.select('Canada',{ force: true })
+-------
+***Wait
+cy.wait(2000)
+--------
+***Suggested elements
+It is important to locate the correct elements
+We first manually understand the locator of the suggested list
+Then we can locate one of the option then click
+ // METHOD 1 is locate the one of the suggested option
+//Then click on it
+cy
+.get('.ac_results > ul > :nth-child(2)')
+.click()
+
+
+//METHOD 2 is to use contains
+//and click on it
+cy
+.get('.ac_results')//Summer Dresses > Printed Summer,Evening Dresses > Printed ,Summer Dresses > Printed Summer ,..
+.contains('Printed')//Click on the 1st element if there are multiple match
+.click()
+
+-------
+**Mouse Over 
+-Cypress uses trigger function to do mouse actions
+-To move over to an element we use .trigger('mouseover')
+cy
+.get('.icp-nav-link-inner')//getting the element 
+.trigger('mouseover')//moving the mouse over
+------
+***Scroll
+*scrollIntoView
+cy
+.get('.col-md-7 > .mb-4')
+.scrollIntoView();  
+
+*scrollTo
+cy
+.scrollTo(0, 1000)//scrolling 1000 px down
+cy.wait(2000)
+cy
+.scrollTo(0, -500)//scrolling 500 px up
+
+---------
+***checkbox
+-check() or click() to check the checkbox
+	-If there are multiple elements, check() will check them all
+-uncheck() is used to uncheck the checkboxes
+	-If there are multiple elements, uncheck() will uncheck them all
+--------------------------------------------
+***alerts
+-Cypress automatically accepts alert when you click on alert button
+
+***Assertion:
+-We use below syntax to assert the text
+-Checking if the element text = You successfully clicked an alert
+should('have.text','You successfully clicked an alert')
+
+
+
+
+
+
+
+
