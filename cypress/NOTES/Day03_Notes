@@ -1,0 +1,95 @@
+DAY 03
+---------------
+***Frames***
+frames are pages within a page
+there are multiple html tag in a single page
+
+1.install plugin : 
+    LINK: https://www.npmjs.com/package/cypress-iframe
+    RUN ON TERMINAL : npm install -D cypress-iframe
+2. IMPORT PACKAGE IN THE CLASS : import 'cypress-iframe';
+
+3. cy.frameLoaded('CSS OF THE FRAME');
+
+4. Once we are inside the the frame, we need to use below sysntax to find element
+cy.iframe().find('CSS OF ELEMENT')
+----------------------------------
+***Working with multiple windows
+-cypress cannot open the new window
+-but we can manupilate the element
+-WAY 1. for example we can remove the target attribute using cypress automation
+so the window will open in the same  window
+
+Click Here Element:
+<a href="/windows/new" ,="" target="_blank">Click Here</a>
+
+target="_blank"       ===>>> make this open in the new window!!!!
+href="/windows/new"   ===>>> url you want to open
+
+When you click on the button, it will open in a new window(target="_blank")
+And url will have /windows/new extension (href="/windows/new")
+
+
+-WAY 2.  We will get the value of href
+    And store in a variable
+    Then open the value in the same window
+    prop() to get value of the attribute
+    prop() is a jquery method
+    since prop is a jquery we use then() to use prop function
+
+Click Here Element:
+<a href="/windows/new" ,="" target="_blank">Click Here</a>
+
+href="/windows/new"   ===>>> url you want to open
+ cy
+    .get('.example > a')//click here element
+    .then((element)=>{
+      const newURL =  element.prop('href')//getting the value of href attribute
+      https://the-internet.herokuapp.com/windows/new
+
+      cy.visit(newURL)
+    })
+
+
+***More on mouse keyboard actions
+
+******Creating Custom Methods*******
+We use commands.js to create custom methods so they will be visible in th entire framework
+-Create a custom method 
+-name : login
+-parameters (email,password)
+-functionality 
+	-click on the Sign in link
+	-type email and password
+	-click on the sign in button
+
+
+/*
+-Create a custom method 
+-name : login
+-parameters (email,password)
+-functionality 
+    -go to the link
+	-click on the Sign in link
+	-type email and password
+	-click on the sign in button
+*/
+Cypress.Commands.add('login',(email,password) => {
+    cy.visit("http://automationpractice.com/index.php")
+    cy.get('.login').click()
+    cy.get('#email').type(email)
+    cy.get('#passwd').type(password)
+    cy.get('#SubmitLogin > span').click()
+})
+
+
+CALL THIS CUSTOM METHOD IN THE TEST CLASS:
+
+describe('custom method', ()=>{
+
+    it('log in',()=>{
+   
+        cy
+        .login('cdef!@gmail.com','12345')//login the  name of the method we created in the Commands.js file
+    })
+})
