@@ -1,0 +1,189 @@
+Day04
+***Custom commands review***
+We create custom commands in the commands.js file
+These custom commands are visible in teh entire fromework automatically
+This means I can call any method in any test class
+We call than method from the test classes using cy.COMMANDNAME(PARAMATER)
+
+1. Adding custom command in the commands.js
+Cypress.Commands.add('amazonSearch',(productName) => {
+})
+In this example,
+name of the method : amazonSearch
+name of the argument/parameter : productName
+
+2. Call in the test class.
+describe('Search',()=>{
+    it('amazon search',()=>{
+     cy
+     .amazonSearch('teapot')  
+    })
+})
+In this test class,
+we call .amazonSearch('teapot')
+amazonSearch is the method name 
+teapot is the argument
+---------------------
+***FILE UPLOAD****
+1. go to https://www.npmjs.com/package/cypress-file-upload
+run below command in the project level
+npm install --save-dev cypress-file-upload
+
+2.In commands.js under support folder, 
+import 'cypress-file-upload';
+
+3. Add an image in the fixture folder 
+Fixture is used to hold test data
+Image name : image1.jpeg
+
+4. Create a test class day04_file_upload.js
+-----------------------
+***VievPorts**
+https://docs.cypress.io/api/commands/viewport#Syntax
+This is to test the application in different screen sizes
+mac, ipad, iphone, samsung,...
+---------------------------------------
+***RUN CYPRESS TESTS FROM THE COMMAND OR TERMINAL
+1. We can runs cypress test cases using cypress runner
+That is what we have been doing
+
+2. We can run the cypress test using the TERMINAL
+https://docs.cypress.io/guides/guides/command-line#cypress-run
+By default, cypress runs on electron headless
+
+---------STEPS RUNNING FROM THE TERMINAL------
+1. Make sure you are in the project directory: techproeds-iMac:my-cypress-framework techproed$
+*** runs all tests headless
+2. ./node_modules/.bin/cypress run 
+
+********************
+===IF YOU SEE ERRORS====
+1.Delete Cypress folder:
+/Users/techproed/Library/Caches/Cypress/ 
+
+2. Install again: 
+Get in the project directory and run below command
+npm install --save-dev cypress
+**************************
+
+***run single test case (spec file)
+./node_modules/.bin/cypress run --spec PATH OF THE SPEC FILE
+
+Below command runs day01_login_test.js only on the headless on electron
+./node_modules/.bin/cypress run --spec cypress/integration/com.techproed/day01_login_test.js
+
+Below command runs day01_login_test.js only on the browser 
+-ADD --headed 
+-Runs on electron headed
+-Closes the broser automatically when the test case is complete
+./node_modules/.bin/cypress run --spec cypress/integration/com.techproed/day01_login_test.js --headed
+
+***run all test in certain package:
+package: com.techproed
+tests  : all of the tests
+* means ALL
+./node_modules/.bin/cypress run --spec cypress/integration/com.techproed/*.js
+
+***run on chrome from TERMINAL
+./node_modules/.bin/cypress run --spec cypress/integration/com.techproed/day01_login_test.js --browser chrome
+./node_modules/.bin/cypress run --spec cypress/integration/com.techproed/day01_login_test.js --browser firefox
+
+
+*****MOCHA FRAMEWORK***
+https://mochajs.org/
+-Cypress uses mocha framework by default
+-Mocha is a javascroipt testing framework
+-Some of the most used properties :
+describe  => to create test classes.
+it()      => to create single test cases
+before()  => runs before ALL it() only once. like beforeclass in testNG
+beforeEach()=>runs before each it() only once. like beforemethod in testNG
+after()  => runs after ALL it() only once. like afterclass in testNG
+afterEach()=>runs after each it() only once. like aftermethod in testNG
+it().skip() => to skip test cases
+it().only() => to run specific test case
+-----------------
+We use these annotation for precondition, test cases, postcondition, assertions
+-----------------
+./node_modules/.bin/cypress run --spec cypress/integration/com.techproed/day04_mocha_hooks.js --browser chrome
+
+
+******CYPRESS DASHBOARD******
+-Log in with git hub or gmail credendials
+-Create a project
+-Add projectID on cypress.json
+{
+  "chromeWebSecurity": false,
+  "projectId": "8yzr4r"
+}
+-Run the tests using cypress dashboard key form the terminal 
+
+
+***Running all test and recording on dashboard project
+./node_modules/.bin/cypress run --record --key 07e2f4c5-a0c3-430b-822e-0c9a55e39d78
+
+**Running specific test case and saving the rpeorts on the dashboard
+./node_modules/.bin/cypress run --spec cypress/integration/com.techproed/day01_login_test.js --record --key 07e2f4c5-a0c3-430b-822e-0c9a55e39d78
+
+-Then you should see all of the reports onyour cypress dashboard
+================================
+*****CYPRESS HTML REPORTS*****
+***Mocha Awesome Reports!!!!!!
+
+INSTALLATION STEPS:
+1.
+LINK : https://www.npmjs.com/package/mochawesome
+COMMAND: npm install --save-dev mochawesome
+
+2.
+LINK : https://www.npmjs.com/package/mochawesome-merge
+COMMAND : npm install mochawesome-merge --save-dev
+
+3.
+LINK : https://www.npmjs.com/package/mochawesome-report-generator
+COMMAND : npm install -g mochawesome-report-generator
+--------------------
+NOTE:
+IF YOU HAVE PERMISSION ISSUE RUN THIS AND ENTER YOUR PASS:
+sudo chown -R $USER /usr/local/lib/node_modules
+-------------------
+
+4. Add mochawesome report configurations inside CYPRESS.JSON FILE
+{
+  "chromeWebSecurity": false,
+  "reporter": "mochawesome",
+    "reporterOptions": {
+      "reportDir": "cypress/reports",
+      "reportFilename": "report",
+      "overwrite": false,
+      "html": true,
+      "json": true,
+      "charts": true
+    },
+    "video": false
+}
+
+
+5. Run from terminal:
+./node_modules/.bin/cypress run --spec cypress/integration/com.techproed/day01_login_test.js
+
+
+6. Then you should see reports folder
+Under reports folder, there should be report.html and report.json reports
+
+*****TO MERGE THE REPORTS ******
+
+7. In package.json > scripts
+Add below to merge single reports and output.html to see all the reports as single file
+
+ "merge": "mochawesome-merge cypress/reports/*.json > cypress/reports/output.json",
+ "generate_mochawesome_report": "marge cypress/reports/output.json --reportDir ./ --inline"
+
+
+8. npm run merge
+   npm run generate_mochawesome_report
+
+   THEN YOU SHOULD SEE OUTPUT.HTML 
+   OPEN output.html then you should see all piece of reports are merge in this single file
+
+   The end ... 

@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-07-25T20:17:28.449Z",
+    "end": "2021-07-25T20:17:32.111Z",
+    "duration": 3662,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8c4b8047-0c7d-448a-a14a-c10382086e66",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/first_test_case.js",
+      "file": "cypress/integration/com.techproed/first_test_case.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cb10ddd6-353e-4c08-b467-170c24d823c9",
+          "title": "My First Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "URL Test",
+              "fullTitle": "My First Test URL Test",
+              "timedOut": null,
+              "duration": 1279,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// And Verify the url contains google\ncy.visit('https://www.google.com/');\ncy.url().should('include', 'google');",
+              "err": {},
+              "uuid": "ef202d54-e2e5-452e-9b7f-0ef7a64955aa",
+              "parentUUID": "cb10ddd6-353e-4c08-b467-170c24d823c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TITLE Test",
+              "fullTitle": "My First Test TITLE Test",
+              "timedOut": null,
+              "duration": 1297,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// And Verify the url contains google\ncy.visit('https://www.google.com/');\ncy.url().should('include', 'google');",
+              "err": {},
+              "uuid": "ed1bebdf-5a57-46ee-8b7e-8a9d5d03d3b2",
+              "parentUUID": "cb10ddd6-353e-4c08-b467-170c24d823c9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ef202d54-e2e5-452e-9b7f-0ef7a64955aa",
+            "ed1bebdf-5a57-46ee-8b7e-8a9d5d03d3b2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2576,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

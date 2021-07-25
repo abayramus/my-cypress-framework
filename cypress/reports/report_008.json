@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-07-25T20:15:23.373Z",
+    "end": "2021-07-25T20:15:35.922Z",
+    "duration": 12549,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "86f772d6-8bda-415c-91b5-f30274fe42ee",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_hover_over.js",
+      "file": "cypress/integration/com.techproed/day02_hover_over.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f38ed3b5-585b-4017-a002-917b2b8cb1f7",
+          "title": "move over",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "move over",
+              "fullTitle": "move over move over",
+              "timedOut": null,
+              "duration": 10959,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.amazon.com/');\ncy.get('.icp-nav-link-inner') //getting the element \n.trigger('mouseover'); //moving the mouse over\ncy.wait(3000);\n/*Test Case\nclick on Change country/region\nselect Canada from the dropdown\n*/\n//click on Change country/region\ncy.contains('Change country/region').click(); //select Canada from the dropdown\ncy.get('#icp-selected-country').select('Canada', {\n  force: true\n});",
+              "err": {},
+              "uuid": "3416ed55-7697-4467-9319-fe5e8ae4628d",
+              "parentUUID": "f38ed3b5-585b-4017-a002-917b2b8cb1f7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3416ed55-7697-4467-9319-fe5e8ae4628d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10959,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

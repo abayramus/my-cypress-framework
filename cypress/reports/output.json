@@ -1,0 +1,1309 @@
+{
+  "stats": {
+    "suites": 20,
+    "tests": 25,
+    "passes": 23,
+    "pending": 1,
+    "failures": 1,
+    "start": "2021-07-25T20:11:38.357Z",
+    "end": "2021-07-25T20:17:32.111Z",
+    "duration": 131107,
+    "testsRegistered": 25,
+    "passPercent": 92,
+    "pendingPercent": 4,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2ce5c527-44e8-497d-b4ae-75bc859cd44a",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day01_login_test.js",
+      "file": "cypress/integration/com.techproed/day01_login_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "37496e62-b4dd-4142-8f22-e86d30fd5392",
+          "title": "Go to the application",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test Case 1",
+              "fullTitle": "Go to the application Test Case 1",
+              "timedOut": null,
+              "duration": 5885,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// visit () => to go to the URL\ncy.visit('https://qa-environment.crystalkeyhotels.com/'); //clicking on Log in\n//Finding the elements \n//whose text includes 'Log in'\n//Then clicking on it\ncy.contains('Log in').click(); //get() is used to find element.\n//Find username and type 'manager'\n//type is used to type in input box\ncy.get('#UserName').type('manager'); // driver.findElement(By.cssLocator('#UserName')).sendKeys('manager')\n//Find password and type 'Manager2!'\ncy.get('#Password').type('Manager2!'); //Click on the submit button\n//click() is ised to click on the buttons\ncy.get('#btnSubmit').click();",
+              "err": {},
+              "uuid": "d5c4b9f3-d07f-4024-8f5d-a99dd166b06b",
+              "parentUUID": "37496e62-b4dd-4142-8f22-e86d30fd5392",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d5c4b9f3-d07f-4024-8f5d-a99dd166b06b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5885,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b5efebe4-d4d9-49e1-8bfc-d19994496553",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day01_finding_elements.js",
+      "file": "cypress/integration/com.techproed/day01_finding_elements.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "98608d3a-05f6-47f8-b43b-212a50c54e07",
+          "title": "Finding Elements",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "get method",
+              "fullTitle": "Finding Elements get method",
+              "timedOut": null,
+              "duration": 4384,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://qa-environment.crystalkeyhotels.com/');\ncy.contains('Log in').click(); //ASSERTINS:\n//1. Asserting if url includes Logon\ncy.url().should('include', 'Logon'); //2. Assert if Log in is visible\n//CSS LOCATORS FOR LOG IN\n//.row > .mb-4\n//h2.mb-4\n//h2[class='mb-4']\n//1. get () is used to locate the elements\n//should('be.visible') : checking if the element is visible \ncy.get('.row > .mb-4').should('be.visible'); //Finding total number of links taht is child of li\n//Assert the total is 29\n//  li a => Means give me all link(a) that is child of list item(li)\n// xpath = li//a , css = li a\ncy.get('li a').should('have.length', 29); //2. find() is used to find any element after get()\n//get the Single room and assert there is one matching element\ncy.get(\"a[href='/Rooms/6']\").should('have.length', 1); //We can also say specifically\n//find a[href='/Rooms/6'] that is child of li\ncy.get('li').find(\"a[href='/Rooms/6']\").should('have.length', 1); //3. within () is also used after get()\n// Looks for specific elements within that parent\n//PARENT : div.categories  CHILD : a[href='/Rooms/318']\ncy.get(\"a[href='/Rooms/318']\").should('have.length', 1);\ncy.get('div.categories').find(\"a[href='/Rooms/318']\").should('have.length', 1);\ncy.get('div.categories').within(() => {\n  //Search for the elements that is only child of div.categories\n  cy.get(\"a[href='/Rooms/318']\").should('have.length', 1);\n  cy.get(\"a[href='/Rooms/318']\").click();\n});\n/*\nNOTES: -We should always try get() to find the elements first\n-If this fails to locate the element(not visible, not unique ,...)\nThen try find\n-If that also doesn't locate the element\nThen use within\n */",
+              "err": {},
+              "uuid": "7e3b53ab-f10e-4aea-ab28-515200a72908",
+              "parentUUID": "98608d3a-05f6-47f8-b43b-212a50c54e07",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7e3b53ab-f10e-4aea-ab28-515200a72908"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4384,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "bd3a03ea-db89-4a07-b864-cb44096cbca5",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day01_launch_browser.js",
+      "file": "cypress/integration/com.techproed/day01_launch_browser.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bc1203c8-619a-4e14-b9b2-4411c8cd9626",
+          "title": "Go to the application",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test Case 1",
+              "fullTitle": "Go to the application Test Case 1",
+              "timedOut": null,
+              "duration": 2123,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// visit () => to go to the URL\ncy.visit('https://qa-environment.crystalkeyhotels.com/'); //clicking on Log in\n//Finding the elements \n//whose text includes 'Log in'\n//Then clicking on it\ncy.contains('Log in').click(); //Verifying if the user is on the Login page\n//I will check if the new url contains /Account/Logon\ncy.url().should('include', '/Account/Logon');",
+              "err": {},
+              "uuid": "d56ff84c-5b97-4175-8576-9b5cb6f5ca85",
+              "parentUUID": "bc1203c8-619a-4e14-b9b2-4411c8cd9626",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d56ff84c-5b97-4175-8576-9b5cb6f5ca85"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2123,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "40ed7c77-f891-4a75-a833-2a14f6de2ed2",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day01_login_test.js",
+      "file": "cypress/integration/com.techproed/day01_login_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9c8b4d99-b1ae-4d3a-8274-5553171b28e2",
+          "title": "Go to the application",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test Case 1",
+              "fullTitle": "Go to the application Test Case 1",
+              "timedOut": null,
+              "duration": 8182,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// visit () => to go to the URL\ncy.visit('https://qa-environment.crystalkeyhotels.com/'); //clicking on Log in\n//Finding the elements \n//whose text includes 'Log in'\n//Then clicking on it\ncy.contains('Log in').click(); //get() is used to find element.\n//Find username and type 'manager'\n//type is used to type in input box\ncy.get('#UserName').type('manager'); // driver.findElement(By.cssLocator('#UserName')).sendKeys('manager')\n//Find password and type 'Manager2!'\ncy.get('#Password').type('Manager2!'); //Click on the submit button\n//click() is ised to click on the buttons\ncy.get('#btnSubmit').click();",
+              "err": {},
+              "uuid": "173658c2-65e6-4ab6-b5ca-2f621ab2e84d",
+              "parentUUID": "9c8b4d99-b1ae-4d3a-8274-5553171b28e2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "173658c2-65e6-4ab6-b5ca-2f621ab2e84d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8182,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "161deeab-94d9-42dd-9cd7-f7e597e97b51",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_alerts.js",
+      "file": "cypress/integration/com.techproed/day02_alerts.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dd76018a-41c4-4fed-bdbe-ac228b584da4",
+          "title": "alerts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "dismiss alert Test",
+              "fullTitle": "alerts dismiss alert Test",
+              "timedOut": null,
+              "duration": 726,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/*\nCypress automatically accepts alert when you click on alert button\nWith cypress we can control the browser events using on function\non is a jquery function\n  */\ncy.visit('https://the-internet.herokuapp.com/javascript_alerts'); //clicking the second alrt button\n//by default the alert will be accepted\ncy.get(':nth-child(2) > button').click(); // //window(object):confirm(functionality)\ncy.on('window:confirm', str => {\n  return false; //DEFAULT CYPRESS BEHAVIOUR return true\n}); //Asserting the result now has You clicked: Cancel\ncy.get('#result').should('have.text', 'You clicked: Cancel');",
+              "err": {},
+              "uuid": "85141ee4-4011-4deb-bd02-e0800f7449ee",
+              "parentUUID": "dd76018a-41c4-4fed-bdbe-ac228b584da4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "entering text on the alert",
+              "fullTitle": "alerts entering text on the alert",
+              "timedOut": null,
+              "duration": 3268,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/*\nCypress automatically accepts alert when you click on alert button\nWe will use window()\n */\ncy.visit('https://the-internet.herokuapp.com/javascript_alerts'); //Controll the promtp\n//type Hi\n//click Ok\ncy.window() //to controll the pop up window\n.then($windowElement => {\n  //$windowElement represent the window popup element\n  cy.stub($windowElement, 'prompt') //\n  .returns('Hi'); //Entering Hi in the prompt\n  cy.wait(3000); //Click on the 3rd alert\n  cy.get(':nth-child(3) > button').click(); //After I enter Hi in the prompt, I click on the alert\n}); //Asserting the result\ncy.get('#result').should('have.text', 'You entered: Hi');",
+              "err": {},
+              "uuid": "458406c9-5f22-48e5-b059-c1c6c1b4b579",
+              "parentUUID": "dd76018a-41c4-4fed-bdbe-ac228b584da4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "85141ee4-4011-4deb-bd02-e0800f7449ee",
+            "458406c9-5f22-48e5-b059-c1c6c1b4b579"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3994,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9400b3ed-74ee-456a-8323-c5be3c27e1f5",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_basic_navigations.js",
+      "file": "cypress/integration/com.techproed/day02_basic_navigations.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a1f11a62-be13-4abe-ba85-58090581b62d",
+          "title": "navigations",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "back, forward, refresh",
+              "fullTitle": "navigations back, forward, refresh",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "e533e210-0f45-40ed-968e-75802f2ce8f9",
+              "parentUUID": "a1f11a62-be13-4abe-ba85-58090581b62d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "chaining the navigations",
+              "fullTitle": "navigations chaining the navigations",
+              "timedOut": null,
+              "duration": 4271,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//WE CAN CHAIN THE FUNCTION\ncy.visit('https://qa-environment.crystalkeyhotels.com/'); //chaining the methods\ncy.contains('Log in').click().go('back').go('forward').go('back'); //forcing to reload. Note that we do not need to force here\n//And verify the Log in link is visible\ncy.reload(true) //true means force\n.contains('Log in') //getting the Log in element\n.should('be.visible'); //asserting if the element is visible",
+              "err": {},
+              "uuid": "e3ebea33-3d28-4e3e-af7b-56b7ceaea558",
+              "parentUUID": "a1f11a62-be13-4abe-ba85-58090581b62d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e3ebea33-3d28-4e3e-af7b-56b7ceaea558"
+          ],
+          "failures": [],
+          "pending": [
+            "e533e210-0f45-40ed-968e-75802f2ce8f9"
+          ],
+          "skipped": [],
+          "duration": 4271,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "6d62cbcf-3f17-4b77-bcd2-181881bd16a0",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_checkbox.js",
+      "file": "cypress/integration/com.techproed/day02_checkbox.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2ca94187-f4bc-450a-be36-e13fc46e55b0",
+          "title": "checkboxes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "check checkboxes with click()",
+              "fullTitle": "checkboxes check checkboxes with click()",
+              "timedOut": null,
+              "duration": 4870,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//go to http://automationpractice.com/index.php\n//click on WOMEN\n//check the first checkbox\ncy.visit('http://automationpractice.com/index.php');\ncy.get('.sf-with-ul') //returning 4 elements\n.first() //selecting on the first element\n.click(); //clicking on the first one\n// input[type='checkbox'] returns all of the checkbox on the page\n//   cy\n//   .get(\"input[type='checkbox']\")\n//   .click({ multiple: true })\n//   NOTE: click works for only single elements\n// If you want to click multiple checkbox, use click({ multiple: true })\n//ASSERTION \n//HOW DO YOU UNDERSTAND IF CHECKBOX IS CHECKED OR NOT\ncy.get(\"input[type='checkbox']\").first().click({\n  multiple: true\n});\ncy.get(\"input[type='checkbox']\").first().should('be.checked'); //NOTE THAT WE ALREADY DID ASSERTION SO FAR USING .should('be.checked')\n//WE CAN DO DIFFERENT APPROACH TO DO ADDITIONAL ASSERTION\n//FOR EXAMPLE WE CAN CHECK IF THE PARENT ELEMENT HAS class='checked'\n//The change is in the span element\n//WHen a check box is checked the parent span has value of 'checke\n//ASSERT IF THE PARENT SPAN CLASS VALUE IS CHECKED\ncy.get(\"input[type='checkbox']\").first() //getting the first check box\n.parent() //getting teh parent element which is span\n.should('have.class', 'checked'); // asserting if the span class = 'checked'\n//WITH cypress assertion, we can assert if any attribute has any value\n//should('have.id','username')//asserting if id = 'username'\n//should('have.type','text')//asserting if type='text'\n//should('have.class','container')//asserting if class='container'",
+              "err": {},
+              "uuid": "8cb19032-d8f0-4d5c-a6ac-a1350d775c2e",
+              "parentUUID": "2ca94187-f4bc-450a-be36-e13fc46e55b0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8cb19032-d8f0-4d5c-a6ac-a1350d775c2e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4870,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f42dd288-caa7-48a4-b105-831c86a01ed6",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_dropdown.js",
+      "file": "cypress/integration/com.techproed/day02_dropdown.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "275dcb1a-ae47-4078-aae1-9f4410586a22",
+          "title": "dropdown",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "dropdown test",
+              "fullTitle": "dropdown dropdown test",
+              "timedOut": null,
+              "duration": 5074,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://the-internet.herokuapp.com/dropdown\");\ncy.wait(2000); //cypress uses select method to select from a dropdown\n//1. locate the dropdown element\n//2. use select method to select the option\n// cy\n// .get('#dropdown')\n// .select('Option 1')\n// cy.wait(2000)\ncy.get('#dropdown') //location the dropdown element\n.select('Option 1') //selecting Option 1\n.should('have.value', '1'); //selected value = 1\ncy.wait(2000); //selecting option 2\ncy.get('#dropdown') //location the dropdown element\n.select('Option 2') //selecting Option 2\n.should('have.value', '2'); //selected value = 2",
+              "err": {},
+              "uuid": "66f7faed-2e73-4fc0-890f-3268786d354a",
+              "parentUUID": "275dcb1a-ae47-4078-aae1-9f4410586a22",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "66f7faed-2e73-4fc0-890f-3268786d354a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5074,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "86f772d6-8bda-415c-91b5-f30274fe42ee",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_hover_over.js",
+      "file": "cypress/integration/com.techproed/day02_hover_over.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f38ed3b5-585b-4017-a002-917b2b8cb1f7",
+          "title": "move over",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "move over",
+              "fullTitle": "move over move over",
+              "timedOut": null,
+              "duration": 10959,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.amazon.com/');\ncy.get('.icp-nav-link-inner') //getting the element \n.trigger('mouseover'); //moving the mouse over\ncy.wait(3000);\n/*Test Case\nclick on Change country/region\nselect Canada from the dropdown\n*/\n//click on Change country/region\ncy.contains('Change country/region').click(); //select Canada from the dropdown\ncy.get('#icp-selected-country').select('Canada', {\n  force: true\n});",
+              "err": {},
+              "uuid": "3416ed55-7697-4467-9319-fe5e8ae4628d",
+              "parentUUID": "f38ed3b5-585b-4017-a002-917b2b8cb1f7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3416ed55-7697-4467-9319-fe5e8ae4628d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10959,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "40534079-14f6-40a2-814e-8c54f0223183",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_scroll.js",
+      "file": "cypress/integration/com.techproed/day02_scroll.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6b39c240-eb7c-49a1-8447-2302778b837e",
+          "title": "scroll",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "scroll into view",
+              "fullTitle": "scroll scroll into view",
+              "timedOut": null,
+              "duration": 11838,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://qa-environment.crystalkeyhotels.com/');\ncy.wait(2000); //Scrolling down to 'Our Rooms' element\ncy.get('.col-md-7 > .mb-4').scrollIntoView(); //scrolling to recent blogs\ncy.wait(2000);\ncy.get(':nth-child(9) > .container > .justify-content-center > .col-md-7 > h2').scrollIntoView(); //Scrolling to check in date\ncy.wait(2000);\ncy.get(':nth-child(1) > .form-group > .wrap > label').scrollIntoView(); // scrollTo(x, y)\ncy.wait(2000);\ncy.scrollTo(0, 1000); //scrolling 1000 px down\ncy.wait(2000);\ncy.scrollTo(0, -500); //scrolling 500 px up\n/* scrollTo()\nhttps://docs.cypress.io/api/commands/scrollto#Syntax\n 1. we do not scroll on an element\n We scroll a certain amount (pixel or percent)\n */",
+              "err": {},
+              "uuid": "552e9519-21ab-443d-8109-51585650a72f",
+              "parentUUID": "6b39c240-eb7c-49a1-8447-2302778b837e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "552e9519-21ab-443d-8109-51585650a72f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11838,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "dd45ce91-8293-4cda-95b4-83380be35494",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_suggested_elements.js",
+      "file": "cypress/integration/com.techproed/day02_suggested_elements.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "31ab44e3-fef7-47b0-b40a-3896c26510f8",
+          "title": "suggested elements",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "suggested elements",
+              "fullTitle": "suggested elements suggested elements",
+              "timedOut": null,
+              "duration": 7306,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.google.com/\");\ncy.get(\"input[name='q']\").type('usa');\ncy.wait(3000);\ncy.get('li span b') //getting the list of bold items\n.contains('map') //choosing the one that contains map\n.click(); //then clicking on it\n/*li span b :\nmap\na login\njobs\ntoday\na customer service\n */",
+              "err": {},
+              "uuid": "41228c83-bd42-400e-a38f-529750dee47d",
+              "parentUUID": "31ab44e3-fef7-47b0-b40a-3896c26510f8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "automation practice . com ",
+              "fullTitle": "suggested elements automation practice . com ",
+              "timedOut": null,
+              "duration": 14057,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://automationpractice.com/index.php\");\ncy.get(\"input[id='search_query_top']\").type('dress');\ncy.wait(5000); // METHOD 1 is locate the one of the suggested option\n//Then click on it\n// cy\n// .get('.ac_results > ul > :nth-child(2)')\n// .click()\n//METHOD 2 is to use contains\n//and click on it\ncy.get('.ac_results') //Summer Dresses > Printed Summer,Evening Dresses > Printed ,Summer Dresses > Printed Summer ,..\n.contains('Blouse') //Click on the 1st element if there are multiple match\n.click();\ncy.wait(5000); //Assertion\ncy.get(\"h1[itemprop='name']\").should('be.visible');",
+              "err": {},
+              "uuid": "ccdcfd06-bac5-40e8-b2a5-ba1518e36fd2",
+              "parentUUID": "31ab44e3-fef7-47b0-b40a-3896c26510f8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "41228c83-bd42-400e-a38f-529750dee47d",
+            "ccdcfd06-bac5-40e8-b2a5-ba1518e36fd2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21363,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2dc7db83-a6af-44b9-ae46-9fcdb12d5f7b",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day03_custom_login.js",
+      "file": "cypress/integration/com.techproed/day03_custom_login.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "311bb6aa-2f09-4f9a-aa06-e0c393be3fde",
+          "title": "custom method",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "negative log in",
+              "fullTitle": "custom method negative log in",
+              "timedOut": null,
+              "duration": 6794,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// login is the custom method that is inside the commands.js\n//when we add a function in commands.js\n//it will be accessable in the entire framewrok automatically\ncy.login('cdef!!@gmail.com', '12345'); //ASSERTIONS\n//assert if page contains Authentication failed.\ncy.contains('Authentication failed.').should('be.visible'); //assert if url contains controller=authentication\ncy.url().should('include', 'controller=authentication');\ncy.screenshot(); //taking screenshot",
+              "err": {},
+              "uuid": "b79ef9fd-dc91-43fa-a87d-4f4e6258ee0a",
+              "parentUUID": "311bb6aa-2f09-4f9a-aa06-e0c393be3fde",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b79ef9fd-dc91-43fa-a87d-4f4e6258ee0a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6794,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "ad342742-6662-46fb-992e-a157a1a138fc",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day03_drag_and_drop.js",
+      "file": "cypress/integration/com.techproed/day03_drag_and_drop.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8c817c6f-2e00-49ee-aa9d-fc8786beea1c",
+          "title": "drag and drop",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "double click",
+              "fullTitle": "drag and drop double click",
+              "timedOut": null,
+              "duration": 832,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.testandquiz.com/selenium/testing.html');\ncy.get('#dblClkBtn').dblclick(); // cy.get('#dblClkBtn').rightclick()\ncy.on('window:alert', str => {\n  //All below assertions are valid\n  expect(str).to.equal('hi, JavaTpoint Testing'); //asserting the text equals: hi, JavaTpoint Testing\n  expect(str).to.eq('hi, JavaTpoint Testing'); //geting the text as str and comparing\n  expect(str).to.contains('hi, JavaTpoint Testing'); //geting the text as str and comparing\n});",
+              "err": {},
+              "uuid": "0b22aec8-95d1-439e-a403-4de8827067fa",
+              "parentUUID": "8c817c6f-2e00-49ee-aa9d-fc8786beea1c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "drag and drop",
+              "fullTitle": "drag and drop drag and drop",
+              "timedOut": null,
+              "duration": 515,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/*DRAG AND DROP:\n1. RUN ON TERMINAL : npm install --save-dev @4tw/cypress-drag-drop\n2. import '@4tw/cypress-drag-drop'\n*/\ncy.visit('https://www.testandquiz.com/selenium/testing.html'); //dragging #sourceImage over #targetDiv\ncy.get('#sourceImage') //source\n.drag('#targetDiv'); //target",
+              "err": {},
+              "uuid": "826019f3-a135-459d-9aa1-b8f64e3c1efb",
+              "parentUUID": "8c817c6f-2e00-49ee-aa9d-fc8786beea1c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0b22aec8-95d1-439e-a403-4de8827067fa",
+            "826019f3-a135-459d-9aa1-b8f64e3c1efb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1347,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "417b2a1f-14d5-4102-aa79-bc36de76db92",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day03_frames.js",
+      "file": "cypress/integration/com.techproed/day03_frames.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dee31a43-d34b-41f4-a4a8-0cb05f4f9a65",
+          "title": "iframes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "handeling iframes",
+              "fullTitle": "iframes handeling iframes",
+              "timedOut": null,
+              "duration": 2548,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/*iframes:\nframes are pages within a page\nthere are multiple html tag in a single page\n 1.install plugin : \n LINK: https://www.npmjs.com/package/cypress-iframe\n RUN ON TERMINAL : npm install -D cypress-iframe\n2. IMPORT PACKAGE IN THE CLASS : import 'cypress-iframe';\nWE CAN USE import 'cypress-iframe'; INSIDE THE \n 3. cy.frameLoaded('CSS OF THE FRAME');\n 4. Once we are inside the the frame, we need to use below sysntax to find element\ncy.iframe().find('CSS OF ELEMENT')\n */\ncy.visit('https://the-internet.herokuapp.com/iframe'); //ASSERTING THE TEXT\ncy.get('h3').should('contain.text', 'Editor'); //Switching the iframe element\n//#mce_0_ifr is the css locator of the frame\ncy.frameLoaded('#mce_0_ifr');\ncy.iframe() //We need to use iframe() when we are inside the iframes\n.find('p') //use find() to locate the element inside the frame\n.clear(); //clearing the element\ncy.iframe().find('p').type('Inside the iframe'); //WORKING OUTSIDE OF THE FRAME\n//Cypress automatically handles element athtais outside of the frame\n//ASSERTING THE TEXT\ncy.get('h3').should('contain.text', 'Editor'); //clicking on the Elemental Selenium\ncy.contains('Elemental Selenium').click();",
+              "err": {},
+              "uuid": "0f84e3ab-d52c-4322-bc5c-aa624731253d",
+              "parentUUID": "dee31a43-d34b-41f4-a4a8-0cb05f4f9a65",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0f84e3ab-d52c-4322-bc5c-aa624731253d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2548,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "7df884fe-c4db-4b04-9207-67490853538d",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day03_multiple_windows.js",
+      "file": "cypress/integration/com.techproed/day03_multiple_windows.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9525b8b6-f1ff-4517-bff0-0d056e68d9a0",
+          "title": "multiple windows",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "removing target",
+              "fullTitle": "multiple windows removing target",
+              "timedOut": null,
+              "duration": 6328,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://the-internet.herokuapp.com/windows\"); //Remove target attribute to open on the same window\n//.invoke('removeAttr','ATTRIBUTE NAME'): removes the attribute from teh element\ncy.get('.example > a') //click here element\n.click(); //ASSERTING THE NEW WINDOW IS OPENED \n//AND CYPRES CAN WORK IN THAT WINDOW\ncy.get('h3').should('have.text', 'New Window');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h3>' to have text 'New Window', but the text was 'Opening a new window'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h3>' to have text 'New Window', but the text was 'Opening a new window'\n    at Context.eval (https://the-internet.herokuapp.com/__cypress/tests?p=cypress/integration/com.techproed/day03_multiple_windows.js:108:18)",
+                "diff": "- 'Opening a new window'\n+ 'New Window'\n"
+              },
+              "uuid": "f3650626-315c-4fde-959c-5930c8479dcd",
+              "parentUUID": "9525b8b6-f1ff-4517-bff0-0d056e68d9a0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f3650626-315c-4fde-959c-5930c8479dcd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6328,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2e5ce87b-a29f-4470-8766-5729dbf65388",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day04_custom_search.js",
+      "file": "cypress/integration/com.techproed/day04_custom_search.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b1ec6a48-7083-4a4e-af29-28cd556f2f07",
+          "title": "Search",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "amazon search",
+              "fullTitle": "Search amazon search",
+              "timedOut": null,
+              "duration": 7420,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//amazonSearch('teapot') comes from the commends.js\ncy.amazonSearch('teapot');\ncy.get('.a-color-state').should('have.text', '\"teapot\"');\ncy.title().should('include', 'teapot');",
+              "err": {},
+              "uuid": "738f9c2b-30a7-4e4c-a367-e77fd9adb7e1",
+              "parentUUID": "b1ec6a48-7083-4a4e-af29-28cd556f2f07",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "738f9c2b-30a7-4e4c-a367-e77fd9adb7e1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7420,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "028bef7b-c509-4afc-a76e-e73ed33685ad",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day04_file_upload.js",
+      "file": "cypress/integration/com.techproed/day04_file_upload.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7bf2c325-a55e-4afa-8707-57c007e5d7be",
+          "title": "File Upload",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "multiple file upload",
+              "fullTitle": "File Upload multiple file upload",
+              "timedOut": null,
+              "duration": 8307,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://davidwalsh.name/demo/multiple-file-upload.php'); //path of all images\nconst path1 = 'image1.jpeg';\nconst path2 = 'image2.jpeg';\nconst path3 = 'image3.jpeg'; //This will override the previous files\n//Below will keep the last file only\ncy.get('#filesToUpload').attachFile(path1).wait(3000).attachFile(path2).wait(3000).attachFile(path3); //Assertion\ncy.get(':nth-child(6) > strong').should('contain.text', 'Files You Selected:');",
+              "err": {},
+              "uuid": "870274d9-e77f-4776-a7ca-8653134d285d",
+              "parentUUID": "7bf2c325-a55e-4afa-8707-57c007e5d7be",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "870274d9-e77f-4776-a7ca-8653134d285d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8307,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "53b9af7b-ccb2-4fcc-9096-f2eab822ec8e",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day04_mocha_hooks.js",
+      "file": "cypress/integration/com.techproed/day04_mocha_hooks.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "387ff612-d218-4e2a-8858-339f01199261",
+          "title": "Hooks",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Hooks test",
+              "fullTitle": "Hooks Hooks test",
+              "timedOut": null,
+              "duration": 3197,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Log in').click();",
+              "err": {},
+              "uuid": "5ae291ec-7199-429b-a28f-9c27e7ee6c7c",
+              "parentUUID": "387ff612-d218-4e2a-8858-339f01199261",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5ae291ec-7199-429b-a28f-9c27e7ee6c7c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3197,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "0f41a647-ee98-4d6f-bb7e-f7c7376feab5",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day04_viewports.js",
+      "file": "cypress/integration/com.techproed/day04_viewports.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dfc64dc3-3c20-4df2-96d0-f45308550a24",
+          "title": "Viewports",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "view with certain pixals",
+              "fullTitle": "Viewports view with certain pixals",
+              "timedOut": null,
+              "duration": 9647,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('www.amazon.com');\ncy.viewport(2000, 1000);\ncy.screenshot();",
+              "err": {},
+              "uuid": "6b10906f-c5af-40b6-9a2a-2a175b8f952a",
+              "parentUUID": "dfc64dc3-3c20-4df2-96d0-f45308550a24",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6b10906f-c5af-40b6-9a2a-2a175b8f952a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9647,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "8c4b8047-0c7d-448a-a14a-c10382086e66",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/first_test_case.js",
+      "file": "cypress/integration/com.techproed/first_test_case.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cb10ddd6-353e-4c08-b467-170c24d823c9",
+          "title": "My First Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "URL Test",
+              "fullTitle": "My First Test URL Test",
+              "timedOut": null,
+              "duration": 1279,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// And Verify the url contains google\ncy.visit('https://www.google.com/');\ncy.url().should('include', 'google');",
+              "err": {},
+              "uuid": "ef202d54-e2e5-452e-9b7f-0ef7a64955aa",
+              "parentUUID": "cb10ddd6-353e-4c08-b467-170c24d823c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TITLE Test",
+              "fullTitle": "My First Test TITLE Test",
+              "timedOut": null,
+              "duration": 1297,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// And Verify the url contains google\ncy.visit('https://www.google.com/');\ncy.url().should('include', 'google');",
+              "err": {},
+              "uuid": "ed1bebdf-5a57-46ee-8b7e-8a9d5d03d3b2",
+              "parentUUID": "cb10ddd6-353e-4c08-b467-170c24d823c9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ef202d54-e2e5-452e-9b7f-0ef7a64955aa",
+            "ed1bebdf-5a57-46ee-8b7e-8a9d5d03d3b2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2576,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

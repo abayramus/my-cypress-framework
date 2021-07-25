@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-07-25T20:15:37.261Z",
+    "end": "2021-07-25T20:15:50.477Z",
+    "duration": 13216,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "40534079-14f6-40a2-814e-8c54f0223183",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_scroll.js",
+      "file": "cypress/integration/com.techproed/day02_scroll.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6b39c240-eb7c-49a1-8447-2302778b837e",
+          "title": "scroll",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "scroll into view",
+              "fullTitle": "scroll scroll into view",
+              "timedOut": null,
+              "duration": 11838,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://qa-environment.crystalkeyhotels.com/');\ncy.wait(2000); //Scrolling down to 'Our Rooms' element\ncy.get('.col-md-7 > .mb-4').scrollIntoView(); //scrolling to recent blogs\ncy.wait(2000);\ncy.get(':nth-child(9) > .container > .justify-content-center > .col-md-7 > h2').scrollIntoView(); //Scrolling to check in date\ncy.wait(2000);\ncy.get(':nth-child(1) > .form-group > .wrap > label').scrollIntoView(); // scrollTo(x, y)\ncy.wait(2000);\ncy.scrollTo(0, 1000); //scrolling 1000 px down\ncy.wait(2000);\ncy.scrollTo(0, -500); //scrolling 500 px up\n/* scrollTo()\nhttps://docs.cypress.io/api/commands/scrollto#Syntax\n 1. we do not scroll on an element\n We scroll a certain amount (pixel or percent)\n */",
+              "err": {},
+              "uuid": "552e9519-21ab-443d-8109-51585650a72f",
+              "parentUUID": "6b39c240-eb7c-49a1-8447-2302778b837e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "552e9519-21ab-443d-8109-51585650a72f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11838,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

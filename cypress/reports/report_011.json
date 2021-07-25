@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-07-25T20:16:17.288Z",
+    "end": "2021-07-25T20:16:25.846Z",
+    "duration": 8558,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2dc7db83-a6af-44b9-ae46-9fcdb12d5f7b",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day03_custom_login.js",
+      "file": "cypress/integration/com.techproed/day03_custom_login.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "311bb6aa-2f09-4f9a-aa06-e0c393be3fde",
+          "title": "custom method",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "negative log in",
+              "fullTitle": "custom method negative log in",
+              "timedOut": null,
+              "duration": 6794,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// login is the custom method that is inside the commands.js\n//when we add a function in commands.js\n//it will be accessable in the entire framewrok automatically\ncy.login('cdef!!@gmail.com', '12345'); //ASSERTIONS\n//assert if page contains Authentication failed.\ncy.contains('Authentication failed.').should('be.visible'); //assert if url contains controller=authentication\ncy.url().should('include', 'controller=authentication');\ncy.screenshot(); //taking screenshot",
+              "err": {},
+              "uuid": "b79ef9fd-dc91-43fa-a87d-4f4e6258ee0a",
+              "parentUUID": "311bb6aa-2f09-4f9a-aa06-e0c393be3fde",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b79ef9fd-dc91-43fa-a87d-4f4e6258ee0a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6794,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

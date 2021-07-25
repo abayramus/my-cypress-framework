@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-07-25T20:16:27.164Z",
+    "end": "2021-07-25T20:16:30.014Z",
+    "duration": 2850,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ad342742-6662-46fb-992e-a157a1a138fc",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day03_drag_and_drop.js",
+      "file": "cypress/integration/com.techproed/day03_drag_and_drop.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8c817c6f-2e00-49ee-aa9d-fc8786beea1c",
+          "title": "drag and drop",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "double click",
+              "fullTitle": "drag and drop double click",
+              "timedOut": null,
+              "duration": 832,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.testandquiz.com/selenium/testing.html');\ncy.get('#dblClkBtn').dblclick(); // cy.get('#dblClkBtn').rightclick()\ncy.on('window:alert', str => {\n  //All below assertions are valid\n  expect(str).to.equal('hi, JavaTpoint Testing'); //asserting the text equals: hi, JavaTpoint Testing\n  expect(str).to.eq('hi, JavaTpoint Testing'); //geting the text as str and comparing\n  expect(str).to.contains('hi, JavaTpoint Testing'); //geting the text as str and comparing\n});",
+              "err": {},
+              "uuid": "0b22aec8-95d1-439e-a403-4de8827067fa",
+              "parentUUID": "8c817c6f-2e00-49ee-aa9d-fc8786beea1c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "drag and drop",
+              "fullTitle": "drag and drop drag and drop",
+              "timedOut": null,
+              "duration": 515,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/*DRAG AND DROP:\n1. RUN ON TERMINAL : npm install --save-dev @4tw/cypress-drag-drop\n2. import '@4tw/cypress-drag-drop'\n*/\ncy.visit('https://www.testandquiz.com/selenium/testing.html'); //dragging #sourceImage over #targetDiv\ncy.get('#sourceImage') //source\n.drag('#targetDiv'); //target",
+              "err": {},
+              "uuid": "826019f3-a135-459d-9aa1-b8f64e3c1efb",
+              "parentUUID": "8c817c6f-2e00-49ee-aa9d-fc8786beea1c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0b22aec8-95d1-439e-a403-4de8827067fa",
+            "826019f3-a135-459d-9aa1-b8f64e3c1efb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1347,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

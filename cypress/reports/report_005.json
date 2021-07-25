@@ -1,0 +1,127 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 1,
+    "failures": -1,
+    "start": "2021-07-25T20:15:02.390Z",
+    "end": "2021-07-25T20:15:07.705Z",
+    "duration": 5315,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 50,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "9400b3ed-74ee-456a-8323-c5be3c27e1f5",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_basic_navigations.js",
+      "file": "cypress/integration/com.techproed/day02_basic_navigations.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a1f11a62-be13-4abe-ba85-58090581b62d",
+          "title": "navigations",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "back, forward, refresh",
+              "fullTitle": "navigations back, forward, refresh",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "e533e210-0f45-40ed-968e-75802f2ce8f9",
+              "parentUUID": "a1f11a62-be13-4abe-ba85-58090581b62d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "chaining the navigations",
+              "fullTitle": "navigations chaining the navigations",
+              "timedOut": null,
+              "duration": 4271,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//WE CAN CHAIN THE FUNCTION\ncy.visit('https://qa-environment.crystalkeyhotels.com/'); //chaining the methods\ncy.contains('Log in').click().go('back').go('forward').go('back'); //forcing to reload. Note that we do not need to force here\n//And verify the Log in link is visible\ncy.reload(true) //true means force\n.contains('Log in') //getting the Log in element\n.should('be.visible'); //asserting if the element is visible",
+              "err": {},
+              "uuid": "e3ebea33-3d28-4e3e-af7b-56b7ceaea558",
+              "parentUUID": "a1f11a62-be13-4abe-ba85-58090581b62d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e3ebea33-3d28-4e3e-af7b-56b7ceaea558"
+          ],
+          "failures": [],
+          "pending": [
+            "e533e210-0f45-40ed-968e-75802f2ce8f9"
+          ],
+          "skipped": [],
+          "duration": 4271,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

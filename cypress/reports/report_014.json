@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-07-25T20:16:36.159Z",
+    "end": "2021-07-25T20:16:43.646Z",
+    "duration": 7487,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7df884fe-c4db-4b04-9207-67490853538d",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day03_multiple_windows.js",
+      "file": "cypress/integration/com.techproed/day03_multiple_windows.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9525b8b6-f1ff-4517-bff0-0d056e68d9a0",
+          "title": "multiple windows",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "removing target",
+              "fullTitle": "multiple windows removing target",
+              "timedOut": null,
+              "duration": 6328,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://the-internet.herokuapp.com/windows\"); //Remove target attribute to open on the same window\n//.invoke('removeAttr','ATTRIBUTE NAME'): removes the attribute from teh element\ncy.get('.example > a') //click here element\n.click(); //ASSERTING THE NEW WINDOW IS OPENED \n//AND CYPRES CAN WORK IN THAT WINDOW\ncy.get('h3').should('have.text', 'New Window');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h3>' to have text 'New Window', but the text was 'Opening a new window'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h3>' to have text 'New Window', but the text was 'Opening a new window'\n    at Context.eval (https://the-internet.herokuapp.com/__cypress/tests?p=cypress/integration/com.techproed/day03_multiple_windows.js:108:18)",
+                "diff": "- 'Opening a new window'\n+ 'New Window'\n"
+              },
+              "uuid": "f3650626-315c-4fde-959c-5930c8479dcd",
+              "parentUUID": "9525b8b6-f1ff-4517-bff0-0d056e68d9a0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f3650626-315c-4fde-959c-5930c8479dcd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6328,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
