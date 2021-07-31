@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-07-31T06:05:33.693Z",
+    "end": "2021-07-31T06:05:37.024Z",
+    "duration": 3331,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "083bd792-675b-464e-97d8-fa3a2a6902ae",
+      "title": "",
+      "fullFile": "cypress/integration/smoketest/day01_launch_browser.js",
+      "file": "cypress/integration/smoketest/day01_launch_browser.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "29fa7f37-8448-4171-b686-7971bceb7749",
+          "title": "Go to the application",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test Case 1",
+              "fullTitle": "Go to the application Test Case 1",
+              "timedOut": null,
+              "duration": 2445,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// visit () => to go to the URL\ncy.visit('https://qa-environment.crystalkeyhotels.com/'); //clicking on Log in\n//Finding the elements \n//whose text includes 'Log in'\n//Then clicking on it\ncy.contains('Log in').click(); //Verifying if the user is on the Login page\n//I will check if the new url contains /Account/Logon\ncy.url().should('include', '/Account/Logon');",
+              "err": {},
+              "uuid": "2b743c44-d457-4872-af19-1ed2a0a1c150",
+              "parentUUID": "29fa7f37-8448-4171-b686-7971bceb7749",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2b743c44-d457-4872-af19-1ed2a0a1c150"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2445,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

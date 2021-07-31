@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-07-31T05:27:49.996Z",
+    "end": "2021-07-31T05:27:55.666Z",
+    "duration": 5670,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0febe61f-5f55-4fac-9746-56dfadca70ce",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_dropdown.js",
+      "file": "cypress/integration/com.techproed/day02_dropdown.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0d85fccf-e219-4f4d-acee-81833a54f3c0",
+          "title": "dropdown",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "dropdown test",
+              "fullTitle": "dropdown dropdown test",
+              "timedOut": null,
+              "duration": 4892,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://the-internet.herokuapp.com/dropdown\");\ncy.wait(2000); //cypress uses select method to select from a dropdown\n//1. locate the dropdown element\n//2. use select method to select the option\n// cy\n// .get('#dropdown')\n// .select('Option 1')\n// cy.wait(2000)\ncy.get('#dropdown') //location the dropdown element\n.select('Option 1') //selecting Option 1\n.should('have.value', '1'); //selected value = 1\ncy.wait(2000); //selecting option 2\ncy.get('#dropdown') //location the dropdown element\n.select('Option 2') //selecting Option 2\n.should('have.value', '2'); //selected value = 2",
+              "err": {},
+              "uuid": "4cbef88e-ccc5-4098-9ded-3db70eb78aa2",
+              "parentUUID": "0d85fccf-e219-4f4d-acee-81833a54f3c0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4cbef88e-ccc5-4098-9ded-3db70eb78aa2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4892,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

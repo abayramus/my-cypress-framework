@@ -1,0 +1,42 @@
+Day05
+-------
+***Fixtures:
+--------------
+https://paylinn.com/
+
+Username : User
+Password : user
+--------------
+Create a new class: day05_paylinn_login.js
+----getting data from Fixtures---
+1. create a class
+day05_paylinn_login_with_fixture.js
+
+2. create a json file under fixtures
+File name : creds.json
+
+{
+    "username":"User",
+    "password":"user"
+}
+----------------
+***PAGE OBJECT MODEL WITH CYPRESS
+-pom is used to design framework,
+-It is used for easy easy maintanance, easy flow, understandable objects
+-We create page object in a new package and differenct page class
+-POM is used to seperate the page objects from the test class so the test classes looks siple and more understandable
+STEPS:
+1. Create a package: pageObjectRepository
+2. Create 2 page classes :HomePage.js, LoginPage.js
+3. Create methods that returns the page objects 
+
+For example for HomePage.js we need to return Sign in link element
+
+class HomePage {
+    getSigninLink(){
+        return cy.contains('Sign In')
+    }
+}
+export default HomePage;
+
+CREATE A TEST CLASS: day05_POM_test.js

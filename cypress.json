@@ -1,8 +1,8 @@
 {
   "chromeWebSecurity": false,
-  "projectId": "8yzr4r",
+  "projectId": "tpdgta",
   "reporter": "mochawesome",
-    "reporterOptions": {
+  "reporterOptions": {
       "reportDir": "cypress/reports",
       "reportFilename": "report",
       "overwrite": false,
@@ -10,5 +10,12 @@
       "json": true,
       "charts": true
     },
-    "video": false
+  
+    "video": false,
+
+    "retries": {
+      
+      "runMode": 2
+  
+    }
 }

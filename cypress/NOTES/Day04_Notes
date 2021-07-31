@@ -37,6 +37,10 @@ Fixture is used to hold test data
 Image name : image1.jpeg
 
 4. Create a test class day04_file_upload.js
+
+ cy
+ .get('#filesToUpload')
+ .attachFile(path1) => attachFile uploaded files to the websites
 -----------------------
 ***VievPorts**
 https://docs.cypress.io/api/commands/viewport#Syntax
@@ -112,6 +116,10 @@ We use these annotation for precondition, test cases, postcondition, assertions
 -Log in with git hub or gmail credendials
 -Create a project
 -Add projectID on cypress.json
+When you create a project cypres dashboard give two id:
+1. "projectId": "8yzr4r"  -> add cypress.json file
+2. key :07e2f4c5-a0c3-430b-822e-0c9a55e39d78 -> use this to run the project
+
 {
   "chromeWebSecurity": false,
   "projectId": "8yzr4r"
@@ -128,7 +136,7 @@ We use these annotation for precondition, test cases, postcondition, assertions
 -Then you should see all of the reports onyour cypress dashboard
 ================================
 *****CYPRESS HTML REPORTS*****
-***Mocha Awesome Reports!!!!!!
+***Mocha-Awesome Reports!!!!!!
 
 INSTALLATION STEPS:
 1.
@@ -166,7 +174,7 @@ sudo chown -R $USER /usr/local/lib/node_modules
 
 5. Run from terminal:
 ./node_modules/.bin/cypress run --spec cypress/integration/com.techproed/day01_login_test.js
-
+./node_modules/.bin/cypress run -> runs and generates report for all tests
 
 6. Then you should see reports folder
 Under reports folder, there should be report.html and report.json reports
@@ -187,3 +195,4 @@ Add below to merge single reports and output.html to see all the reports as sing
    OPEN output.html then you should see all piece of reports are merge in this single file
 
    The end ... 
+=
