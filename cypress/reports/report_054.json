@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-08-01T14:53:53.021Z",
+    "end": "2021-08-01T14:53:58.273Z",
+    "duration": 5252,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6e06a7d1-2e3b-42e2-9290-09d1aff0d596",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_alerts.js",
+      "file": "cypress/integration/com.techproed/day02_alerts.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2479eb7c-3001-4877-9fa5-557b9cccaf77",
+          "title": "alerts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "dismiss alert Test",
+              "fullTitle": "alerts dismiss alert Test",
+              "timedOut": null,
+              "duration": 775,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/*\nCypress automatically accepts alert when you click on alert button\nWith cypress we can control the browser events using on function\non is a jquery function\n  */\ncy.visit('https://the-internet.herokuapp.com/javascript_alerts'); //clicking the second alrt button\n//by default the alert will be accepted\ncy.get(':nth-child(2) > button').click(); // //window(object):confirm(functionality)\ncy.on('window:confirm', str => {\n  return false; //DEFAULT CYPRESS BEHAVIOUR return true\n}); //Asserting the result now has You clicked: Cancel\ncy.get('#result').should('have.text', 'You clicked: Cancel');",
+              "err": {},
+              "uuid": "1265969d-b20d-4eaf-bc65-4e03c6bd6c32",
+              "parentUUID": "2479eb7c-3001-4877-9fa5-557b9cccaf77",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "entering text on the alert",
+              "fullTitle": "alerts entering text on the alert",
+              "timedOut": null,
+              "duration": 3276,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/*\nCypress automatically accepts alert when you click on alert button\nWe will use window()\n */\ncy.visit('https://the-internet.herokuapp.com/javascript_alerts'); //Controll the promtp\n//type Hi\n//click Ok\ncy.window() //to controll the pop up window\n.then($windowElement => {\n  //$windowElement represent the window popup element\n  cy.stub($windowElement, 'prompt') //\n  .returns('Hi'); //Entering Hi in the prompt\n  cy.wait(3000); //Click on the 3rd alert\n  cy.get(':nth-child(3) > button').click(); //After I enter Hi in the prompt, I click on the alert\n}); //Asserting the result\ncy.get('#result').should('have.text', 'You entered: Hi');",
+              "err": {},
+              "uuid": "a15598b3-6adc-4b77-8d76-816ab15c98a0",
+              "parentUUID": "2479eb7c-3001-4877-9fa5-557b9cccaf77",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1265969d-b20d-4eaf-bc65-4e03c6bd6c32",
+            "a15598b3-6adc-4b77-8d76-816ab15c98a0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4051,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-08-01T14:39:05.606Z",
+    "end": "2021-08-01T14:39:11.905Z",
+    "duration": 6299,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "afd3c306-7c8a-4580-b300-3ab87e6f0aba",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day01_finding_elements.js",
+      "file": "cypress/integration/com.techproed/day01_finding_elements.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "761a6be5-f517-4730-b93f-8ac5d604251c",
+          "title": "Finding Elements",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "get method",
+              "fullTitle": "Finding Elements get method",
+              "timedOut": null,
+              "duration": 4085,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://qa-environment.crystalkeyhotels.com/');\ncy.contains('Log in').click(); //ASSERTINS:\n//1. Asserting if url includes Logon\ncy.url().should('include', 'Logon'); //2. Assert if Log in is visible\n//CSS LOCATORS FOR LOG IN\n//.row > .mb-4\n//h2.mb-4\n//h2[class='mb-4']\n//1. get () is used to locate the elements\n//should('be.visible') : checking if the element is visible \ncy.get('.row > .mb-4').should('be.visible'); //Finding total number of links taht is child of li\n//Assert the total is 29\n//  li a => Means give me all link(a) that is child of list item(li)\n// xpath = li//a , css = li a\ncy.get('li a').should('have.length', 29); //2. find() is used to find any element after get()\n//get the Single room and assert there is one matching element\ncy.get(\"a[href='/Rooms/6']\").should('have.length', 1); //We can also say specifically\n//find a[href='/Rooms/6'] that is child of li\ncy.get('li').find(\"a[href='/Rooms/6']\").should('have.length', 1); //3. within () is also used after get()\n// Looks for specific elements within that parent\n//PARENT : div.categories  CHILD : a[href='/Rooms/318']\ncy.get(\"a[href='/Rooms/318']\").should('have.length', 1);\ncy.get('div.categories').find(\"a[href='/Rooms/318']\").should('have.length', 1);\ncy.get('div.categories').within(() => {\n  //Search for the elements that is only child of div.categories\n  cy.get(\"a[href='/Rooms/318']\").should('have.length', 1);\n  cy.get(\"a[href='/Rooms/318']\").click();\n});\n/*\nNOTES: -We should always try get() to find the elements first\n-If this fails to locate the element(not visible, not unique ,...)\nThen try find\n-If that also doesn't locate the element\nThen use within\n */",
+              "err": {},
+              "uuid": "18c95498-06b8-4b51-9110-586c5a3bb8e3",
+              "parentUUID": "761a6be5-f517-4730-b93f-8ac5d604251c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "18c95498-06b8-4b51-9110-586c5a3bb8e3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4085,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

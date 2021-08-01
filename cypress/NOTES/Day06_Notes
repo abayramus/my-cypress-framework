@@ -1,0 +1,111 @@
+Day06
+--------
+***Adding Custom Scripts
+npm run ...... => used to run test scriots that is inside the package.json
+For example, to run login test:
+./node_modules/.bin/cypress run --spec cypress/integration/com.techproed/day01_login_test.js
+
+Run all test cases:
+./node_modules/.bin/cypress run
+ Let's create a new script to run all test cases
+STEPS:
+1.create a new scripts for running ALL test cases
+package.json>script Add test as following
+ "test": "./node_modules/.bin/cypress run",
+
+ Then run :
+ npm run test
+
+ Now this is the same as running below line on the terminal :
+ ./node_modules/.bin/cypress run
+
+2. runnning headed mode 
+./node_modules/.bin/cypress run --headed
+
+Add below in scripts 
+"test-headed":"./node_modules/.bin/cypress run --headed"
+Then Run:
+npm run test-headed
+
+-----ALTERNATIVELY-------
+OR WE CAN REUSE THE CUSTOM SCRIPT FROM STEP 1
+WE ALREADY ASSIGNED  test = ./node_modules/.bin/cypress run
+WE JUST CAN REPLACE npm run test -- = ./node_modules/.bin/cypress run
+"test-headed":"npm run test -- --headed"
+---------------------------------
+
+3. running headed mode on chrome
+./node_modules/.bin/cypress run --headed --browser=chrome
+
+Add script:
+"test-chrome":"./node_modules/.bin/cypress run --headed --browser=chrome"
+OR
+"test-chrome":"npm run test -- --headed --browser=chrome"
+Then Run:
+npm run test-chrome
+
+4. running codes on the dashboard 
+USER YOUR OWN PROJECT NUMBER
+./node_modules/.bin/cypress run --record --key 992f69ba-ef7c-407b-a762-143ab7d21401
+
+Add script:
+"test-dashboard":"./node_modules/.bin/cypress run --record --key 992f69ba-ef7c-407b-a762-143ab7d21401"
+OR
+"test-dashboard":"npm run test -- --record --key 992f69ba-ef7c-407b-a762-143ab7d21401"
+Then Run:
+npm run test-dashboard
+============
+
+********RERUN FAILED SCENARIOS**************
+https://docs.cypress.io/guides/guides/test-retries
+
+ADD BELOW IN CYPRESS.JSON file:
+"retries": {
+    "runMode": 1,
+    "openMode": 0
+}
+runMode allows you to define the number of test retries when running cypress run
+openMode allows you to define the number of test retries when running cypress open
+
+***Create a smoke-test folder
+And move 
+day01_login_test
+day05_paylinn_login -> failed this on purpose
+
+When we run the code we see 2 attempts for the failed STEP
+
+RUN:
+./node_modules/.bin/cypress run --spec cypress/integration/smoke-test/*.js
+
+
+***RUNNING MULTIPLE SPEC FILES:
+Way1: Create a folder and run all test inside that folder
+For example, we create smoke-test package
+And added 
+day01_login_test
+day05_paylinn_login -> failed this on purpose
+And run 
+./node_modules/.bin/cypress run --spec cypress/integration/smoke-test/*.js
+This commends run both of the spec file
+
+
+Way2:
+https://docs.cypress.io/guides/guides/command-line#cypress-run
+cypress run --spec "cypress/integration/examples/actions.spec.js,cypress/integration/examples/files.spec.js"
+RUN BELOW COMMAND TO RUN ONLY SPECIFIED SPEC FILES:
+./node_modules/.bin/cypress run --spec "cypress/integration/com.techproed/day01_launch_browser.js,cypress/integration/com.techproed/day02_checkbox.js"
+./node_modules/.bin/cypress run --spec "cypress/integration/com.techproed/day01_launch_browser.js,cypress/integration/smoke-test/day01_login_test.js"
+
+***INTELLISENSE
+https://docs.cypress.io/guides/tooling/IDE-integration#Writing-Tests
+WAY1: Triple slash directives
+The simplest way to see IntelliSense when typing a Cypress command or assertion is to add a triple-slash directive to the head of your JavaScript or TypeScript testing file. This will turn the IntelliSense on a per file basis. Copy the comment line below and paste it into your spec file.
+/// <reference types="Cypress" />
+
+WAY2:
+Reference type declarations via jsconfig
+Instead of adding triple slash directives to each JavaScript spec file, some IDEs (like VS Code) understand a common jsconfig.json file in the root of the project. In that file, you can include the Cypress module and your test folders.
+
+{
+  "include": ["./node_modules/cypress", "cypress/**/*.js"]
+}

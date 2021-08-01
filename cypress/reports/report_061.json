@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-08-01T15:31:00.630Z",
+    "end": "2021-08-01T15:31:05.874Z",
+    "duration": 5244,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b4ad3be0-5b9f-4c7f-acfc-4b7d01fdee4d",
+      "title": "",
+      "fullFile": "cypress/integration/com.techproed/day02_checkbox.js",
+      "file": "cypress/integration/com.techproed/day02_checkbox.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f05170d7-8613-480b-a3ec-c45bafc1e850",
+          "title": "checkboxes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "check checkboxes with click()",
+              "fullTitle": "checkboxes check checkboxes with click()",
+              "timedOut": null,
+              "duration": 3637,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//go to http://automationpractice.com/index.php\n//click on WOMEN\n//check the first checkbox\ncy.visit('http://automationpractice.com/index.php');\ncy.get('.sf-with-ul') //returning 4 elements\n.first() //selecting on the first element\n.click(); //clicking on the first one\n// input[type='checkbox'] returns all of the checkbox on the page\n//   cy\n//   .get(\"input[type='checkbox']\")\n//   .click({ multiple: true })\n//   NOTE: click works for only single elements\n// If you want to click multiple checkbox, use click({ multiple: true })\n//ASSERTION \n//HOW DO YOU UNDERSTAND IF CHECKBOX IS CHECKED OR NOT\ncy.get(\"input[type='checkbox']\").first().click({\n  multiple: true\n});\ncy.get(\"input[type='checkbox']\").first().should('be.checked'); //NOTE THAT WE ALREADY DID ASSERTION SO FAR USING .should('be.checked')\n//WE CAN DO DIFFERENT APPROACH TO DO ADDITIONAL ASSERTION\n//FOR EXAMPLE WE CAN CHECK IF THE PARENT ELEMENT HAS class='checked'\n//The change is in the span element\n//WHen a check box is checked the parent span has value of 'checke\n//ASSERT IF THE PARENT SPAN CLASS VALUE IS CHECKED\ncy.get(\"input[type='checkbox']\").first() //getting the first check box\n.parent() //getting teh parent element which is span\n.should('have.class', 'checked'); // asserting if the span class = 'checked'\n//WITH cypress assertion, we can assert if any attribute has any value\n//should('have.id','username')//asserting if id = 'username'\n//should('have.type','text')//asserting if type='text'\n//should('have.class','container')//asserting if class='container'",
+              "err": {},
+              "uuid": "d4fe8ef2-0f47-47b9-abd9-384e92d074dd",
+              "parentUUID": "f05170d7-8613-480b-a3ec-c45bafc1e850",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d4fe8ef2-0f47-47b9-abd9-384e92d074dd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3637,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -19,6 +19,6 @@ describe('PAYLINN', () => {
         //verifying the log in successfull
         cy
         .get('.header__nav > :nth-child(1) > .header__lineOne')
-        .should('contain.text','Welcome')
+        .should('contain.text','Welcomee')
     })
   })
